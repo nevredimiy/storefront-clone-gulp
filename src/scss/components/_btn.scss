@@ -1,0 +1,14 @@
+.btn {
+  background-color: var(--brown-color);
+  color: var(--light-color);
+  padding: 10px 20px;
+
+  @include hover {
+    background-color: var(--dark-brown);
+  }
+
+  &:active {
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+  }
+}

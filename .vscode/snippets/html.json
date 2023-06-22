@@ -1,0 +1,162 @@
+{
+  "svguse": {
+    "scope": "html",
+    "prefix": "g-use",
+    "body": [
+      "<svg class=\"\">",
+      "  <use xlink:href=\"img/sprite.svg#$2\"></use>",
+      "</svg>"
+    ],
+    "description": "Snippet for use svg sprites"
+  },
+  "burger": {
+    "scope": "html",
+    "prefix": "g-burger",
+    "body": [
+      "<button class=\"burger\" aria-label=\"Открыть меню\" aria-expanded=\"false\"  data-burger>",
+      "  <span class=\"burger__line\"></span>",
+      "</button>"
+    ],
+    "description": "Snippet for burger btn"
+  },
+  "checkbox": {
+    "scope": "html",
+    "prefix": "g-checkbox",
+    "body": [
+      "<label class=\"custom-checkbox\">",
+      "  <input type=\"checkbox\" class=\"custom-checkbox__field\">",
+      "  <span class=\"custom-checkbox__content\">$1</span>",
+      "</label>"
+    ],
+    "description": "Snippet for custom checkbox"
+  },
+  "navigation": {
+    "scope": "html",
+    "prefix": "g-menu",
+    "body": [
+      "<nav class=\"menu\" title=\"$1\">",
+      "  <ul class=\"menu__list\">",
+      "    <li class=\"menu__item\"><a href=\"#\" class=\"menu__link\"></a></li>",
+      "    <li class=\"menu__item\"><a href=\"#\" class=\"menu__link\"></a></li>",
+      "    <li class=\"menu__item\">",
+      "         <a href=\"#\" class=\"menu__link\">",
+      "           <svg class=\"icon-arrow-down\" data-dropdownicon width=\"8\" height=\"5\" viewBox=\"0 0 8 5\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+      "             <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M3.76003 4.12891H3.67916C3.63922 4.09499 3.59648 4.06381 3.55981 4.02666C3.39433 3.85909 3.23045 3.68997 3.06624 3.52116C2.04412 2.47043 1.02208 1.41965 0 0.368881V0.227375C0.064911 0.149041 0.14842 0.128826 0.248606 0.128906C2.56161 0.130908 4.87461 0.130443 7.18761 0.130625C7.22454 0.130645 7.26241 0.128623 7.29823 0.135658C7.43262 0.162059 7.48326 0.298188 7.39884 0.405349C7.36977 0.442222 7.3354 0.475011 7.30256 0.50877C6.17825 1.66482 5.05398 2.8209 3.92896 3.97624C3.87612 4.03052 3.81649 4.07817 3.76003 4.12891Z\" fill=\"#1D1D1B\" />",
+      "           </svg>",
+      "         </a>",
+      "         <ul class=\"dropdown list-reset\">",
+      "           <li class=\"dropdown__item\"><a href=\"#\" class=\"dropdown__link\">Item 1</a></li>",
+      "           <li class=\"dropdown__item\"><a href=\"#\" class=\"dropdown__link\">Item 2</a></li>",
+      "           <li class=\"dropdown__item\"><a href=\"#\" class=\"dropdown__link\">Item 3</a></li>",
+      "         </ul>",
+      "    </li>",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "Snippet for navigation"
+  },
+  "social": {
+    "scope": "html",
+    "prefix": "g-social",
+    "body": [
+      "<ul class=\"social\" title=\"$1\">",
+      "  <li class=\"social__item\"><a href=\"#\" target=\"_blank\" class=\"social__link social__link--fb\" aria-label=\"Наша страничка в Фейсбуке\"></a></li>",
+      "  <li class=\"social__item\"><a href=\"#\" target=\"_blank\" class=\"social__link social__link--vk\" aria-label=\"Наша страничка во Вконтакте\"></a></li>",
+      "  <li class=\"social__item\"><a href=\"#\" target=\"_blank\" class=\"social__link social__link--tw\" aria-label=\"Наша страничка в Твиттере\"></a></li>",
+      "</ul>"
+    ],
+    "description": "Snippet for social links"
+  },
+  "basicform": {
+    "prefix": "g-form",
+    "body": [
+      "<form action=\"#\" class=\"form\">",
+      "  <label class=\"form__label\">",
+      "    <input type=\"text\" name=\"Имя\" class=\"input-reset form__input\" placeholder=\"Имя\">",
+      "  </label>",
+      "  <button class=\"btn-reset form__btn\">Отправить</button>",
+      "</form>"
+    ],
+    "description": "Snippet for basic form"
+  },
+  "basicswiper": {
+    "prefix": "g-swiper",
+    "body": [
+      "<div class=\"swiper $1\">",
+      "  <div class=\"swiper-wrapper\">",
+      "     <div class=\"swiper-slide\">",
+      "     </div>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "Snippet for basic swiper structure"
+  },
+  "graph modal Btn": {
+    "prefix": "g-graph-btn",
+    "body": [
+      "<button class=\"btn-reset $1\" data-graph-path=\"$2\">$3</button>"
+    ],
+    "description": "Snippet for graph-modal btn"
+  },
+  "graph modal Structure": {
+    "prefix": "g-graph-modal",
+    "body": [
+      "<div class=\"graph-modal\">",
+      "  <div class=\"graph-modal__container\" role=\"dialog\" aria-modal=\"true\" data-graph-target=\"$1\">",
+      "    <button class=\"btn-reset js-modal-close graph-modal__close\" aria-label=\"Закрыть модальное окно\"></button>",
+      "    <div class=\"graph-modal__content\">$2</div>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "Snippet for graph-modal basic structure"
+  },
+  "picture": {
+    "prefix": "g-picture",
+    "body": [
+      "<picture>",
+      "  <source srcset=\"$1.webp\" type=\"image/webp\">",
+      "  <img loading=\"lazy\" src=\"$1.$2\" class=\"image\" width=\"$4\" height=\"$5\" alt=\"$3\">",
+      "</picture>"
+    ],
+    "description": "Snippet for basic logo structure"
+  },
+  "svgimg": {
+    "scope": "html",
+    "prefix": "g-svgimg",
+    "body": [
+      "<img loading=\"lazy\" src=\"$1.$2\" class=\"image\" width=\"$4\" height=\"$5\" alt=\"$3\">"
+    ],
+    "description": "Snippet for simple html svg images"
+  },
+  "tooltip": {
+  "prefix": "g-tooltip",
+    "body": [
+      "<span class=\"tooltip\">",
+      "  <button class=\"tooltip__btn\" aria-describedby=\"$1\">$2</button>",
+      "  <span class=\"tooltip__txt\" role=\"tooltip\" id=\"$1\">",
+      "    <span class=\"visually-hidden\">Тултип: </span>",
+      "    $3",
+      "  </span>",
+      "</span>"
+    ],
+    "description": "Snippet for tooltip"
+  },
+  "tabs html sctructure": {
+    "prefix": "g-tabs",
+    "body": [
+      "<div class=\"tabs\" data-tabs=\"$1\">",
+      "  <ul class=\"tabs__nav\">",
+      "    <li class=\"tabs__nav-item\"><button class=\"tabs__nav-btn\" type=\"button\">$2</button></li>",
+      "    <li class=\"tabs__nav-item\"><button class=\"tabs__nav-btn\" type=\"button\">$3</button></li>",
+      "    <li class=\"tabs__nav-item\"><button class=\"tabs__nav-btn\" type=\"button\">$4</button></li>",
+      "  </ul>",
+      "  <div class=\"tabs__content\">",
+      "    <div class=\"tabs__panel\">$5</div>",
+      "    <div class=\"tabs__panel\">$6</div>",
+      "    <div class=\"tabs__panel\">$7</div>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "Snippet for basic tabs structure"
+  }
+}

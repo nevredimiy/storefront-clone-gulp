@@ -1,0 +1,65 @@
+@mixin kebab {
+  --kebab-width: 30px;
+  --kebab-height: 30px;
+  --kebab-dot-radius: 4px;
+
+  position: relative;
+  border: none;
+  padding: 0;
+  width: var(--kebab-width);
+  height: var(--kebab-height);
+  color: var(--downriver-color);
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+
+  &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: currentColor;
+      border-radius: 50%;
+      width: var(--kebab-dot-radius);
+      height: var(--kebab-dot-radius);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, width 0.5s ease-in-out, border-radius 0.8s ease-in-out,
+        rotate 0.3s ease-in-out;
+    }
+
+    &::before {
+      transform: translateY(calc(var(--kebab-dot-radius)*-2));
+      // top: 0;
+    }
+
+    &::after {
+      transform: translateY(calc(var(--kebab-dot-radius)*2));
+      // top: 100%;
+    }
+
+  &__dot {
+    position: relative;
+    width: var(--kebab-dot-radius);
+    height: var(--kebab-dot-radius);
+    background-color: currentColor;
+    border-radius: 50%;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &--active {
+
+    &::after, &::before {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+  }
+}
