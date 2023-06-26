@@ -1,0 +1,107 @@
+.footer {
+  background-color: var(--light-gray);
+
+  &__container {
+    display: grid;
+
+    @include xl {
+      grid-template-columns: 1fr 3fr;
+      column-gap: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &_feedback {
+    padding: 10px 0;
+  }
+
+  &__info-block {}
+
+  &__subscribe {
+    padding: 40px 0;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+}
+
+
+.subscribe {
+  &__title {
+    margin: 22px 0 11px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__form {
+    border-bottom: 2px solid var(--black-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    border: none;
+    background-color: var(--light-gray);
+    flex: 1 1 auto;
+    line-height: 2;
+    font-size: 18px;
+    outline: none;
+    padding: 0 5px;
+  }
+
+  &__btn {
+    border: none;
+    background-image: url('../img/email.svg');
+    background-repeat: no-repeat;
+    width: 24px;
+  }
+}
+
+
+.block {
+  width: calc(50% - 5px);
+
+  &--wide {
+    flex: 0 0 auto;
+  }
+
+  @include md {
+    width: calc(25% - 8px);
+  }
+
+  @include xl {
+    width: 20%;
+    padding-top: 40px;
+  }
+
+  &__title {
+    padding: 10px 0;
+  }
+
+  &__list {}
+  &__item {
+    padding: 3px 0;
+  }
+
+  &__link {
+   display: flex;
+   align-items: center;
+    &--small{
+      font-size: 14px;
+
+      @include ssm {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+.icon-mail {}
+

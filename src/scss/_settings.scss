@@ -32,6 +32,19 @@ a {
   color: inherit;
 }
 
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
 .site-container {
   overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
 }
@@ -109,4 +122,8 @@ a {
 
 .page--ios .dis-scroll {
   position: relative;
+}
+
+.inline-block {
+  display: inline-block;
 }
