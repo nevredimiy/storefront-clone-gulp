@@ -7,14 +7,21 @@
 // подключения компонентов страницы
 @import "./components/btn";
 @import "./components/header";
+@import "./components/breadcrumb";
+@import "./components/info-product";
 @import "./components/hero";
 @import "./components/recent-products";
 @import "./components/footer";
 
 
+.main {
+  margin-top: var(--header-height);
+}
+
 .for-center-list {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 

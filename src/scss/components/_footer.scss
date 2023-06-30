@@ -7,8 +7,6 @@
     @include xl {
       grid-template-columns: 1fr 3fr;
       column-gap: 50px;
-      justify-content: center;
-      align-items: center;
     }
   }
 
@@ -85,13 +83,25 @@
   }
 
   &__list {}
+
   &__item {
     padding: 3px 0;
   }
 
   &__link {
    display: flex;
-   align-items: center;
+   gap: 5px;
+   color: var(--black-color);
+
+   @include hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--accent-color);
+    text-decoration: underline;
+  }
+
     &--small{
       font-size: 14px;
 
@@ -103,5 +113,8 @@
 }
 
 
-.icon-mail {}
+.icon-mail, .icon-phone, .icon-map {
+  width: 18px;
+  height: 18px;
+}
 

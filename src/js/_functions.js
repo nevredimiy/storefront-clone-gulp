@@ -56,11 +56,22 @@ import { burger } from './functions/burger';
 // });
 
 // Подключение свайпера
-// import Swiper, { Navigation, Pagination } from 'swiper';
-// Swiper.use([Navigation, Pagination]);
-// const swiper = new Swiper(el, {
-//   slidesPerView: 'auto',
-// });
+import Swiper, { Navigation, Pagination, Thumbs } from 'swiper';
+Swiper.use([Navigation, Pagination, Thumbs]);
+
+var swiper = new Swiper(".gallery__mini-swiper", {
+  spaceBetween: 10,
+  slidesPerView: 3,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".gallery__swiper", {
+  spaceBetween: 10,
+
+  thumbs: {
+    swiper: swiper,
+  },
+});
 
 // Подключение анимаций по скроллу
 // import AOS from 'aos';

@@ -1,0 +1,23 @@
+.breadcrumb {
+  font-size: 10px;
+  color: var(--dark-brown);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  &__list {}
+
+  &__link {
+    text-decoration: underline;
+    color: var(--brown-color);
+    @include hover {
+      text-decoration: none;
+      color: var(--accent-color);
+    }
+
+    &:active {
+      color: var(--accent-color);
+    }
+  }
+
+  &__separator {}
+}
