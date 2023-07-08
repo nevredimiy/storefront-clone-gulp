@@ -1,3 +1,82 @@
+.menu {
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  cursor: pointer;
+  width: 100vw;
+
+  &__list {
+    position: relative;
+    background-color: var(--light-color);
+    top: -1px;
+    width: 100%;
+    cursor: default;
+    text-align: center;
+    height: 100vh;
+    overflow-y: auto;
+
+    @include md {
+      display: flex;
+      flex-wrap: wrap;
+      width: auto;
+      height: auto;
+      overflow-y: inherit;
+    }
+  }
+
+  &__item {
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    @include hover {
+      background-color: var(--light-brown);
+    }
+
+    &:active {
+      background-color: var(--light-brown);
+    }
+
+    @include md {
+      font-size: 1rem;
+      position: relative;
+    }
+  }
+
+  &__link {
+    padding: 10px 0;
+    display: inline-block;
+  }
+
+  &__sub-list {
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease-in-out, height 300ms ease-in-out;
+
+    @include md {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      z-index: 30;
+      background-color: var(--light-gray);
+      pointer-events: all;
+      padding-top: 10px;
+    }
+
+  }
+
+  @include md {
+    display: block;
+    position: static;
+    top: 0;
+  }
+
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -10,29 +89,78 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+  }
+
+  &__link {
+    padding: 10px 15px;
+
+  }
+
+  &__logo-link {
+    @include md {
+      width: 40%;
+    }
+
+    &:focus {
+      outline: 1px solid var(--dark-brown);
+    }
   }
 
   &__logo {
-    padding: 10px 15px;
+    max-width: 100%;
+    width: 100%;
+    padding: 15px 0;
   }
 
-  &__logo-img {}
-
   &__top-menu {
+    display: none;
 
+    @include md {
+      display: block;
+    }
   }
 
   &__search-form {
+    display: none;
+
+    @include md {
+      display: block;
+    }
+  }
+
+  &__burger{
+    @include md {
+      display: none;
+    }
+  }
+
+  &__bottom {
+
+
+    @include md {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
 
   }
 
-  &__bottom {}
-
   &__bottom-menu {
+    opacity: 0;
+    // visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out ;
 
     @include md {
       max-width: 75%;
-      float: left;
+      opacity: 1;
+      // visibility: visible;
+      pointer-events: all;
     }
   }
 
@@ -47,22 +175,18 @@
       display: block;
     }
 
-    &:focus {
-      outline: none;
-    }
-
     @include hover {
-      .header__cart-menu {
+      .mini-cart__cart-menu {
         visibility: visible;
-        opacity: 100;
+        opacity: 1;
         pointer-events: all;
       }
     }
-
-    &:active {}
   }
+}
 
-  &__cart-mini {
+.mini-cart {
+  &__btn {
     padding-left: 10px;
     display: flex;
     align-items: center;
@@ -70,25 +194,6 @@
     border-bottom: 1px solid var(--dark-brown);
     padding: 10px 0;
     transition: background-color 0.3s;
-  }
-
-  &__cart-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-    background-color: #efefef;
-    z-index: 20;
-  }
-
-  &__cart-link {
-    display: flex;
-    align-items: center;
-    flex-direction:row-reverse;
-    flex: 1;
   }
 
   &__cart-icon {
@@ -114,156 +219,88 @@
     }
   }
 
-
-  &__cart-list {
-    border-bottom: 1px solid var(--brown-color);
+  &__cart-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    background-color: #efefef;
+    z-index: 20;
   }
 
-  &__cart-item {
-    @include hover {
-      background-color: var(--light-brown);
-    }
-  }
-}
-
-.menu {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: var(--header-height);
-  height: 100vh;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(105%);
-  transition: transform 0.3s;
-  z-index: 20;
-
-  @include md {
-    position: static;
-    visibility: visible;
-    opacity: 100;
-    pointer-events: all;
-    transform: translateX(0);
-    height: auto;
+  &__remove-from-cart-button {
+    padding-right: 10px;
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-
-    @include md {
-      flex-direction: row;
-      gap: 10px;
-    }
+    border-bottom: 1px solid var(--brown-color);
   }
 
   &__item {
-    transition: background-color 0.3s;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
     display: flex;
-    justify-content: center;
-
-    &:focus {
-      outline: 1px solid var(--dark-brown);
-    }
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
 
     @include hover {
-
       background-color: var(--light-brown);
-
-      .sub-menu {
-        opacity: 100;
-        visibility: visible;
-        pointer-events: all;
-        transform: translate(0, 0);
-        height: auto;
-      }
-
-    }
-
-
-    &:active {
-      outline: none;
-      // background-color: var(--light-brown);
-    }
-
-
-
-    @include md {
-      width: auto;
     }
   }
 
   &__link {
-    font-size: 24px;
-    padding: 10px 5px;
-
-    @include md {
-      font-size: 16px;
-    }
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex: 1;
   }
 
-  &--active {
-    visibility: visible;
-    opacity: 100;
-    pointer-events: all;
-    transform: translateX(0);
-    overflow-y: auto;
-    background-color: var(--light-color);
+  &__img {
+    max-width: 3em;
+  }
 
+  &__quantity {
+    flex: 1 1 100%;
+    padding-left: 32px;
+  }
 
-    & .sub-menu {
-      flex: 1 1 100%;
-    }
+  &__total, &__buttons {
+    padding-left: 10px;
+  }
+
+  &__button {
+    display: inline-block;
+    margin: 5px 0;
   }
 }
 
-
 .menu-item-has-children {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   gap: 5px;
+  justify-content: center;
+  // transition: opacity 300ms ease-in-out, height 300ms ease-in-out;
+
+  // @include hover {
+  //   .sub-menu {
+  //     visibility: visible;
+  //     opacity: 1;
+  //     height: auto;
+  //     pointer-events: all;
+  //     z-index: 30;
+  //   }
+  // }
 
   &__icon {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.3s;
+    transition: transform 300ms ease-in-out;
   }
-
 }
 
 .sub-menu {
-  height: 0;
-  width: 100%;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out, transform 0.1s ease-in-out;
-  transform: translate(0, 10%);
-  background-color: var(--light-gray);
-  z-index: 20;
-  overflow: hidden;
 
-  & .menu__item {
-    padding: 10px 0;
-  }
-
-  @include md {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    min-width: 180px;
-    padding-top: 10px;
-  }
 }
 
 .search {
@@ -286,6 +323,10 @@
     padding-left: 2.5rem;
     line-height: normal;
     font-size: 0.875rem;
+
+    &:focus-visible {
+      outline: 1px solid var(--dark-brown);
+    }
   }
 
   &__btn {
@@ -305,63 +346,27 @@
   &__icon {}
 }
 
-.woocommerce-mini-cart-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 10px;
-}
+.burger {
 
-.remove-from-cart-button {
-  padding-right: 10px;
-}
+  &__icon {}
 
-.icon-remove-button {}
-
-.attachment-woocommerce-thumbnail {
-  max-width: 3em;
-}
-
-.quantity {
-  flex: 1 1 100%;
-  padding-left: 32px;
-}
-
-.woocommerce-mini-cart {
-
-  &__total {
-    padding-left: 10px;
-  }
-
-  &__buttons {
-    padding-left: 10px;
-
-  }
-}
-
-.wp-element-button {
-  display: inline-block;
-  margin: 5px 0;
+  &__line {}
 }
 
 .burger {
-  @include burger;
-
-  @include md {
-    display: none;
-  }
+  @include burger
 }
 
-._active {
-  background-color: var(--light-gray);
-  .sub-menu, .header__cart-menu {
-    opacity: 100;
-    visibility: visible;
-    pointer-events: all;
-    transform: translate(0, 0);
-    overflow: auto;
-    height: auto;
-  }
+._active .sub-menu {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
+
+.menu--active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }
 
 .rotate-180 {
