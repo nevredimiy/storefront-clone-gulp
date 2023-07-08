@@ -273,6 +273,11 @@ h3 {
   z-index: 20;
   background-color: var(--light-color);
 }
+@media (min-width: 768px) {
+  .header {
+    position: relative;
+  }
+}
 .header__top {
   display: -webkit-box;
   display: -ms-flexbox;

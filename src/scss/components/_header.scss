@@ -85,6 +85,10 @@
   z-index: 20;
   background-color: var(--light-color);
 
+  @include md {
+    position: relative;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -136,8 +140,6 @@
   }
 
   &__bottom {
-
-
     @include md {
       display: flex;
       justify-content: space-between;
