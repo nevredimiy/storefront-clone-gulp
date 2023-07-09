@@ -284,17 +284,16 @@
   align-items: center;
   gap: 5px;
   justify-content: center;
-  // transition: opacity 300ms ease-in-out, height 300ms ease-in-out;
 
-  // @include hover {
-  //   .sub-menu {
-  //     visibility: visible;
-  //     opacity: 1;
-  //     height: auto;
-  //     pointer-events: all;
-  //     z-index: 30;
-  //   }
-  // }
+  &__hover {
+    .sub-menu {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      pointer-events: all;
+      z-index: 30;
+    }
+  }
 
   &__icon {
     transition: transform 300ms ease-in-out;
@@ -302,7 +301,6 @@
 }
 
 .sub-menu {
-
 }
 
 .search {

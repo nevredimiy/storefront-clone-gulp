@@ -493,6 +493,13 @@ h3 {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.menu-item-has-children__hover .sub-menu {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  pointer-events: all;
+  z-index: 30;
+}
 .menu-item-has-children__icon {
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   transition: -webkit-transform 300ms ease-in-out;
@@ -1205,6 +1212,11 @@ h3 {
 
 .main {
   margin-top: var(--header-height);
+}
+@media (min-width: 768px) {
+  .main {
+    margin-top: 0;
+  }
 }
 
 .for-center-list {

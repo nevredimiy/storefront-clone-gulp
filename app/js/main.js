@@ -279,7 +279,7 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener("DOMContentLoaded", function () {
   /*
-  ** 
+  **
   */
   const header = document.querySelector('header');
   let headerHeight = header.offsetHeight;
@@ -342,6 +342,36 @@ document.addEventListener("DOMContentLoaded", function () {
           iconChevron.classList.remove('rotate-180');
           menuItem.style.backgroundColor = '';
         }
+      });
+
+      //hover effect for device wich width more 768 px
+      menuItem.addEventListener("mouseenter", () => {
+        if (!menuItem.classList.contains('menu-item-has-children__hover')) {
+          menuItemHasChildrens.forEach(item => {
+            if (item.classList.contains('_active')) {
+              item.classList.remove('_active');
+              iconChevron.classList.remove('rotate-180');
+              menuItem.style.backgroundColor = '';
+            }
+          });
+          menuItem.classList.add('menu-item-has-children__hover');
+          iconChevron.classList.add('rotate-180');
+          menuItem.style.backgroundColor = '#D9D3C7';
+        }
+      });
+      menuItem.addEventListener("mouseleave", () => {
+        menuItemHasChildrens.forEach(item => {
+          if (item.classList.contains('_active')) {
+            item.classList.remove('_active');
+            iconChevron.classList.remove('rotate-180');
+            menuItem.style.backgroundColor = '';
+          }
+          if (item.classList.contains('menu-item-has-children__hover')) {
+            item.classList.remove('menu-item-has-children__hover');
+            iconChevron.classList.remove('rotate-180');
+            menuItem.style.backgroundColor = '';
+          }
+        });
       });
     });
   }
